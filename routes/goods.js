@@ -138,3 +138,4 @@ router.post("/goods", async (req, res) => {
 });
 
 module.exports = router; // good.js파일 안에 있는 변수router를 app.js에 보내줘야할때 선언 방식
+
