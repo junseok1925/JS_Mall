@@ -1,4 +1,5 @@
 const express = require("express");
+const cookieParser = require("cookie-parser");
 const app = express(); 
 const port = 3000;
 
@@ -15,6 +16,7 @@ connect(); // 가져온 connect 함수 실행
 app.use(express.json());
 // 브라우저에 접속했을 때 폼 데이터를 받을 수 있도록 만들어 준다.
 app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
 // API를 사용하기 이전에 있는 미들웨어에서 "assets"이라는 폴더에 있는 파일들을 먼저 찾아보고
 // 만약 "assets"에 내가 원하는 파일이 없다 하고 하면은 그 다음에 있는 API를 찾아보는 미들웨어
 // 프론트엔드 파일을 열어주기 위한 "assets"을 적용한 static 미들웨어

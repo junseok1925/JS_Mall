@@ -1,20 +1,20 @@
 const mongoose = require("mongoose");
 
 const UserSchema = new mongoose.Schema({
-    email:{
-        type: String,
-        required: true,
-        unique: true, // 중복 불가능
-    },
-    nickname: {
-        type: String,
-        required: true,
-        unique: true,
-    },
-    password: {
-        type: String,
-        required: true,
-    }
+  email: { // email 필드
+    type: String,
+    required: true,
+    unique: true,
+  },
+  nickname: { // nickname 필드
+    type: String,
+    required: true,
+    unique: true,
+  },
+  password: { // password 필드
+    type: String,
+    required: true,
+  },
 });
 //virtual() 메서드를 사용하여 가상 속성인 userId를 정의한다.
 // 이 가상 속성은 Mongoose의 ObjectId인 _id를 16진수 문자열로 변환하여 반환한다.
