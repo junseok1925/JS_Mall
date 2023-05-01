@@ -26,7 +26,6 @@ module.exports = async (req, res, next) => {
     // 1. authToken이 만료되었는지 확인
     // 2. authToken이  서버가 발급 토큰이 맞는지 검증
     const { userId } = jwt.verify(authToken, "customized-secret-key");
-
     // 3. authToken에 있는 userId에 해당하는 사용자가 실제 DB에 존재하는지 확인
     const user = await User.findById(userId);
     // 현재 이 미들웨어 다음으로 넘기기 위해서 우선 locals안에다가 유저정보를 전달한다
